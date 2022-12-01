@@ -1,0 +1,14 @@
+.bolaPapel{
+    width: 300px;
+    height: 300px;
+}
+
+.papeleraVacia{
+    width: 300px;
+    height: 300px;
+}
+
+.papeleraLLena{
+    width: 600px;
+    height: 300px;
+}

@@ -1,0 +1,13 @@
+1) Boton SUBMIT -> DESHABILITADO Hasta que se introduzcan los campos
+2) Validaciones:
+    User Name --> No puede tener espacios, ni caracteres .;,!?
+    Email --> Email valido y hotmail, gmail, yahoo
+    Password --> 5 caracteres, 1 mayúscula, 1 minúscula, 1 número
+
+    AL PULSAR SUBMIT
+
+3)  Mensajes de error
+    Clase CSS
+    Desaparezca 3 seg(setTimeOut)
+
+    Mensaje personalizado debajo input     
