@@ -17,10 +17,22 @@ const verificarNombre = (e) => {
 };
 
 const validarFecha = (fecha) => {/* está en formato aaaa-mm-dd */
-
+  if(fecha ==="") return false;
+  let year = parseInt(fecha.substring(0,4));
+  if(year > 2010){
+    return true;
+  } else return false;
+  
 };
 
-const verificarFecha = (e) => {};
+const verificarFecha = (e) => {
+  let fecha = e.target.value;
+  if (!validarFecha(fecha)) {
+    mostrarError("Error en la Fecha", e.target);
+    return false;
+  }
+  return true;
+};
 
 const mostrarError = (mensaje, elemento) => {
   let error = document.createElement("p");
@@ -35,3 +47,5 @@ const mostrarError = (mensaje, elemento) => {
 
 const inputFullName = document.querySelector("[name='nombreApellidos']");
 inputFullName.addEventListener("blur", verificarNombre);
+const inputDate = document.querySelector("[name='fecha']");
+inputDate.addEventListener("blur", verificarFecha);
