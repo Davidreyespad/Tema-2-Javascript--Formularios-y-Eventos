@@ -139,8 +139,7 @@ const validarCiudad = () => {
 
 const validarFormulario = () =>{
     if(validarNombre==false || validarCiudad || validarCorreo || validarFecha || validarMensaje || validarSexo){
-        console.log("Esta mal");
-    
+        console.log("Esta mal");    
     };
 }    
 

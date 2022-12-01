@@ -16,13 +16,13 @@ const verificarNombre = (e) => {
   return true;
 };
 
-const validarFecha = (fecha) => {/* está en formato aaaa-mm-dd */
-  if(fecha ==="") return false;
-  let year = parseInt(fecha.substring(0,4));
-  if(year > 2010){
+const validarFecha = (fecha) => {
+  /* está en formato aaaa-mm-dd */
+  if (fecha === "") return false;
+  let year = parseInt(fecha.substring(0, 4));
+  if (year > 2010) {
     return true;
   } else return false;
-  
 };
 
 const verificarFecha = (e) => {
@@ -43,6 +43,20 @@ const mostrarError = (mensaje, elemento) => {
   setTimeout(() => {
     error.remove();
   }, 3000);
+};
+
+const validarCampos = () => {
+  const inputFullName = document.querySelector("[name='nombreApellidos']");
+  const inputDate = document.querySelector("[name='fecha']");
+  const inputEmail = document.querySelector("[name='correo']");
+  const inputSexList = document.querySelectorAll("[name='sexo']");
+  const inputHobbiesList = document.querySelectorAll("[name='aficiones']");
+  const inputCities = document.querySelector("[name='listaCiudades']");
+  const inputMessage = document.querySelector("[name='mensaje']");
+  const divSex = document.querySelector(".divRadio");
+  const divHobbies = document.querySelector(".divAficiones");
+
+  
 };
 
 const inputFullName = document.querySelector("[name='nombreApellidos']");
