@@ -34,6 +34,41 @@ const verificarFecha = (e) => {
   return true;
 };
 
+const validarCampos = () => {
+  const inputNombreApellidos = document.querySelector("[name='nombreApellidos']");
+  const inputFecha = document.querySelector("[name='fecha']");
+  const inputCorreo = document.querySelector("[name='correo']");
+  const inputSex = document.querySelectorAll("[name='sexo']");
+  const inputHobbies = document.querySelectorAll("[name='aficiones']");
+  const inputCiudades = document.querySelector("[name='listaCiudades']");
+  const inputMensaje = document.querySelector("[name='mensaje']");
+  const divSex = document.querySelector(".divRadio");
+  const divHobbies = document.querySelector(".divAficiones");
+
+  let inputSexChecked = (Array.from(inputSex).filter(item=>item.checked)).length;
+  let inputHobbiesChecked = (Array.from(inputHobbies).filter(item=>item.checked)).length;
+
+  let esOk=true;
+  if(inputNombreApellidos.value===""){
+    mostrarError ("Nombre y Apellidos no puede estar vacío", inputNombreApellidos);
+    esOk=false;
+  }
+  else if (!validarNombre (inputNombreApellidos.value)){
+    mostrarError("Error en el campo Nombre y Apellidos", inputNombreApellidos);
+    esOk=false;
+}
+
+return esOk;
+};
+
+const verificarFormulario = (e) => {
+  if (!validarCampos()) {
+    e.preventDefault();
+        return false;
+  }
+};
+
+
 const mostrarError = (mensaje, elemento) => {
   let error = document.createElement("p");
   error.textContent = mensaje;
@@ -45,21 +80,9 @@ const mostrarError = (mensaje, elemento) => {
   }, 3000);
 };
 
-const validarCampos = () => {
-  const inputFullName = document.querySelector("[name='nombreApellidos']");
-  const inputDate = document.querySelector("[name='fecha']");
-  const inputEmail = document.querySelector("[name='correo']");
-  const inputSexList = document.querySelectorAll("[name='sexo']");
-  const inputHobbiesList = document.querySelectorAll("[name='aficiones']");
-  const inputCities = document.querySelector("[name='listaCiudades']");
-  const inputMessage = document.querySelector("[name='mensaje']");
-  const divSex = document.querySelector(".divRadio");
-  const divHobbies = document.querySelector(".divAficiones");
-
-  
-};
-
 const inputFullName = document.querySelector("[name='nombreApellidos']");
 inputFullName.addEventListener("blur", verificarNombre);
 const inputDate = document.querySelector("[name='fecha']");
 inputDate.addEventListener("blur", verificarFecha);
+const formulario = document.querySelector(".formulario");
+formulario.addEventListener("submit", verificarFormulario);
